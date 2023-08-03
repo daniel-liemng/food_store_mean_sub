@@ -16,10 +16,13 @@ export class HomeComponent {
   constructor(private foodService: FoodService, private route: ActivatedRoute) {
     this.route.paramMap.subscribe((value) => {
       let searchTerm = value.get('searchTerm');
+      let tag = value.get('tag');
       if (searchTerm) {
         this.foods = this.foodService.getFoodsBySearchTerm(searchTerm);
+      } else if (tag) {
+        this.foods = this.foodService.getAllFoodByTag(tag);
       } else {
-        this.foods = this.foodService.getAll();
+        this.foods = this.foodService.getAllFood();
       }
     });
   }

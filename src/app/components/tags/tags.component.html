@@ -1,0 +1,9 @@
+<ul class="flex items-center gap-3 flex-wrap mb-5">
+  <li
+    *ngFor="let tag of tags"
+    (click)="search(tag.name)"
+    class="bg-slate-200 px-4 py-0 rounded-full cursor-pointer hover:bg-red-400 font-medium hover:text-white"
+  >
+    {{ tag.name }} ({{ tag.count }})
+  </li>
+</ul>

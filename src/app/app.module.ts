@@ -11,9 +11,21 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { OrderComponent } from './pages/order/order.component';
 import { SearchComponent } from './components/search/search.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, CartComponent, LoginComponent, RegisterComponent, ProfileComponent, OrderComponent, SearchComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    CartComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    OrderComponent,
+    SearchComponent,
+    TagsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
