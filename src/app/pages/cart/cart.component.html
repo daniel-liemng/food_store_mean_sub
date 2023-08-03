@@ -1,1 +1,96 @@
-<p>cart works!</p>
+<div class="w-full flex justify-between items-center mb-5">
+  <app-title title="Cart"></app-title>
+
+  <button
+    (click)="clearCart()"
+    class="text-sm px-3 py-1 rounded-lg bg-red-400 hover:text-white"
+  >
+    Clear cart
+  </button>
+</div>
+
+<div class="grid grid-cols-12 gap-4">
+  <div class="col-span-12 md:col-span-8">
+    <div *ngIf="cart.items.length === 0">
+      <div
+        class="w-full border border-gray-200 rounded-lg flex justify-center items-center h-[200px]"
+      >
+        <h2 class="text-xl font-semibold text-gray-700">Empty Cart</h2>
+      </div>
+    </div>
+
+    <div
+      *ngIf="cart.items.length > 0"
+      class="w-full border border-gray-200 rounded-lg"
+    >
+      <div
+        *ngFor="let item of cart.items"
+        class="border-b border-gray-200 last:border-b-0"
+      >
+        <div class="p-2 flex justify-between items-center">
+          <img
+            [src]="item.food.imageUrl"
+            [alt]="item.food.name"
+            class="h-12 w-12 object-cover rounded-full"
+          />
+
+          <h4 class="text-base font-semibold text-gray-700">
+            {{ item.food.name }}
+          </h4>
+
+          <select
+            #quantitySelect
+            [value]="item.quantity"
+            (change)="changeQuantity(item.food.id, quantitySelect.value)"
+            class="w-10 outline-gray-300 p-1"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+
+          <h4 class="text-base font-semibold text-gray-700">
+            {{ item.food.price | currency }}
+          </h4>
+
+          <button
+            (click)="removeItem(item.food.id)"
+            class="text-sm px-3 py-1 rounded-lg bg-red-400 hover:text-white"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-12 md:col-span-4">
+    <div
+      class="w-full border border-gray-200 rounded-lg flex flex-col p-2 h-[200px]"
+    >
+      <div class="flex flex-1 items-center justify-center">
+        <div class="flex flex-col gap-3">
+          <h2 class="text-xl text-gray-500">
+            Count:
+            <span class="font-semibold text-gray-900">{{
+              cart.totalCount
+            }}</span>
+          </h2>
+          <h2 class="text-xl text-gray-500">
+            Price:
+            <span class="font-semibold text-gray-900">{{
+              cart.totalPrice | currency
+            }}</span>
+          </h2>
+        </div>
+      </div>
+      <a
+        routerLink="/checkout"
+        class="text-center w-full py-1 bottom-8 bg-red-400 rounded-lg font-semibold hover:text-white"
+      >
+        Proceed to Checkout
+      </a>
+    </div>
+  </div>
+</div>

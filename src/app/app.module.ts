@@ -13,6 +13,8 @@ import { OrderComponent } from './pages/order/order.component';
 import { SearchComponent } from './components/search/search.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { FoodComponent } from './pages/food/food.component';
+import { TitleComponent } from './components/partials/title/title.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FoodComponent } from './pages/food/food.component';
     SearchComponent,
     TagsComponent,
     FoodComponent,
+    TitleComponent,
+    CheckoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

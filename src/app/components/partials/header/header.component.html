@@ -24,8 +24,9 @@
         <a routerLink="/cart" class="relative"
           >Cart
           <span
+            *ngIf="cartQuantity"
             class="bg-red-500 text-white rounded-full h-4 w-4 text-center text-sm absolute -top-1 -right-3 flex justify-center items-center"
-            >3</span
+            >{{ cartQuantity }}</span
           ></a
         >
       </li>
