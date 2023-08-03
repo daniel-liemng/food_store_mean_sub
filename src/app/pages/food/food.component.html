@@ -1,4 +1,11 @@
-<div class="mx-auto grid grid-cols-2 mt-5 px-10">
+<app-not-found
+  [visible]="!food.id"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back to Home"
+  resetLinkRoute="/"
+></app-not-found>
+
+<div *ngIf="food.id" class="mx-auto grid grid-cols-2 mt-5 px-10">
   <div class="col-span-2 md:col-span-1 mx-auto">
     <img
       [src]="food.imageUrl"

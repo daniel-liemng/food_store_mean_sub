@@ -2,6 +2,11 @@
 
 <app-tags></app-tags>
 
+<app-not-found
+  [visible]="!foods || !foods.length"
+  resetLinkText="Reset Search"
+></app-not-found>
+
 <ul class="flex justify-center items-center flex-wrap gap-3">
   <li
     *ngFor="let food of foods"

@@ -15,7 +15,12 @@
       <div
         class="w-full border border-gray-200 rounded-lg flex justify-center items-center h-[200px]"
       >
-        <h2 class="text-xl font-semibold text-gray-700">Empty Cart</h2>
+        <app-not-found
+          [visible]="!cart || !cart.items.length"
+          notFoundMessage="Empty Cart"
+          resetLinkText="Back to Home"
+          resetLinkRoute="/"
+        ></app-not-found>
       </div>
     </div>
 
