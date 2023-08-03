@@ -1,0 +1,72 @@
+<div class="mx-auto grid grid-cols-2 mt-5 px-10">
+  <div class="col-span-2 md:col-span-1 mx-auto">
+    <img
+      [src]="food.imageUrl"
+      [alt]="food.name"
+      class="rounded-2xl h-[400px] w-[450px] object-cover"
+    />
+  </div>
+
+  <div
+    class="col-span-2 md:col-span-1 flex flex-col gap-4 mt-5 md:mt-0 md:justify-center"
+  >
+    <div class="flex items-center justify-between w-full md:w-2/3">
+      <span class="text-3xl font-semibold">{{ food.name }}</span>
+      <span>
+        <i
+          *ngIf="food.favorite"
+          class="fa-solid fa-heart text-red-500 text-2xl"
+        ></i>
+        <i
+          *ngIf="!food.favorite"
+          class="fa-regular fa-heart text-red-500 text-2xl"
+        ></i>
+      </span>
+    </div>
+
+    <div>
+      <i class="fa-solid fa-star text-yellow-400 text-base"></i>
+      <i class="fa-solid fa-star text-yellow-400 text-base"></i>
+      <i class="fa-solid fa-star text-yellow-400 text-base"></i>
+      <i class="fa-solid fa-star text-yellow-400 text-base"></i>
+      <i class="fa-solid fa-star text-yellow-400 text-base"></i>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span
+        *ngFor="let origin of food.origins"
+        class="bg-slate-200 rounded-lg px-4 py-1 text-sm capitalize"
+        >{{ origin }}</span
+      >
+    </div>
+
+    <div class="w-full flex items-center gap-3">
+      <div *ngFor="let tag of food.tags">
+        <a
+          routerLink="/tag/{{ tag }}"
+          class="bg-slate-200 rounded-lg px-4 py-1 text-sm"
+          >{{ tag }}</a
+        >
+      </div>
+    </div>
+
+    <div>
+      <span class="text-lg">
+        Time to cook <strong>{{ food.cookTime }}</strong> minutes
+      </span>
+    </div>
+
+    <div class="text-lg">
+      Price:
+      <span class="text-2xl text-gray-500 font-semibold">{{
+        food.price | currency
+      }}</span>
+    </div>
+
+    <button
+      class="w-full md:w-2/3 bg-red-400 py-1.5 rounded-full font-semibold hover:text-white"
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>

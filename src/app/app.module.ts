@@ -12,6 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { OrderComponent } from './pages/order/order.component';
 import { SearchComponent } from './components/search/search.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { FoodComponent } from './pages/food/food.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TagsComponent } from './components/tags/tags.component';
     OrderComponent,
     SearchComponent,
     TagsComponent,
+    FoodComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
