@@ -10,9 +10,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { OrderComponent } from './pages/order/order.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, CartComponent, LoginComponent, RegisterComponent, ProfileComponent, OrderComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, CartComponent, LoginComponent, RegisterComponent, ProfileComponent, OrderComponent, SearchComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
